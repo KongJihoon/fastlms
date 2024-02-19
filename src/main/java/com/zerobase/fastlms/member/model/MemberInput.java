@@ -1,4 +1,4 @@
-package com.zerobase.fastlms.member;
+package com.zerobase.fastlms.member.model;
 
 import lombok.Builder;
 import lombok.Getter;
