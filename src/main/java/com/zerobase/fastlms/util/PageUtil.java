@@ -83,7 +83,7 @@ public class PageUtil {
         long nextPageIndex = endPage < totalBlockCount ? endPage + 1 : totalBlockCount;
 
         String addQueryString = "";
-        if (queryString != null && queryString.length() > 0) {
+        if (queryString != null && !queryString.isEmpty()) {
             addQueryString = "&" + queryString;
         }
 

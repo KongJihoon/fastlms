@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>관리자 화면</title>
@@ -35,19 +35,7 @@
 </head>
 <body>
     <h1>관리자 회원 관리</h1>
-    <div>
-        <a href="/admin/main"> 홈 </a>
-        |
-        <a href="/admin/member/list"> 회원 관리 </a>
-        |
-        <a href="#"> 카테고리 관리 </a>
-        |
-        <a href="#"> 강의 관리 </a>
-        |
-        <a href="/member/logout"> 로그아웃 </a>
-        <br/>
-        <hr/>
-    </div>
+    <div th:replace="/fragment/layout.html :: fragment-admin-body-menu"></div>
 
     <div class="list">
 
@@ -95,7 +83,12 @@
             <tbody>
                 <tr th:each="x : ${list}">
                     <td th:text="${x.seq}"></td>
-                    <td th:text="${x.userId}">rwg1279@naver.com</td>
+                    <td>
+                        <a th:text="${x.userId}"
+                           th:href="${'detail?userId=' + x.userId}">rwg1279@naver.com</a>
+
+
+                    </td>
                     <td th:text="${x.userName}">kjh</td>
                     <td th:text="${x.phone}">010-4599-1719</td>
                     <td>

@@ -1,0 +1,31 @@
+package com.zerobase.fastlms.admin.service;
+
+import com.zerobase.fastlms.admin.dto.CategoryDto;
+import com.zerobase.fastlms.admin.model.CategoryInput;
+
+import java.util.List;
+
+public interface CategoryService {
+
+    List<CategoryDto> categoryList();
+
+
+    /**
+     * 카테 고리 신규 추가
+     */
+    boolean add(String categoryName);
+    /**
+     * 카테 고리 수정
+     */
+    boolean update(CategoryInput parameter);
+    /**
+     * 카테 고리 삭제
+     */
+    boolean delete(Long id);
+
+    /**
+     * 프론트 카테고리 정보
+     */
+    List<CategoryDto> frontList(CategoryDto parameter);
+
+}
